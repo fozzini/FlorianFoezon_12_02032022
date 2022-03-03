@@ -23,6 +23,9 @@ html {
 }
 body{
   font-family: $font-1;
+  margin : 0px;
+  height:100vh;
+  width:100%;
 }
 
 *, *:before, *:after {
@@ -35,3 +38,7 @@ img{
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}

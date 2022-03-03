@@ -1,0 +1,33 @@
+.verticalNavContainer{
+  display : flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width : 8vw;
+  height:100vh;
+  background-color: $color-9;
+  
+  .sportsIcones{
+    margin-top: 3vw;
+    .vnavimg{
+      display:flex;
+      align-content: center;
+      justify-content: center;
+      background-color:$color-7;
+      border-radius: 6px;
+      padding:1vw;
+      margin :2vw;
+      img{
+        color: $color-1;
+        width: 4vw;
+      }
+    }
+  }
+  h3{
+    color: $color-7;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 0.75vw;
+    font-weight: lighter;
+  }
+}

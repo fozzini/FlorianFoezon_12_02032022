@@ -1,0 +1,32 @@
+.horizontalNavContainer{
+display: flex;
+background-color: $color-9;
+color: $color-7;
+font-size: 1.6vw;
+width:100vw;
+height: 7vw;
+justify-content: space-between;
+align-content: center;
+align-items: center;
+position:relative;
+padding-left: 6.5vw;
+padding-right: 6.5vw;
+
+  .logo{
+    position: absolute;
+    left:1.8vw;
+    width:4vw;
+ 
+  }
+  .text-color{
+    color: $color-1;
+    h3{
+      font-weight: lighter;
+    }
+  }
+  .text{
+    h3{
+      font-weight: lighter;
+    }
+  }
+}
