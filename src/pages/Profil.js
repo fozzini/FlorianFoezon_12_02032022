@@ -24,14 +24,61 @@ const Profil = () => {
         </div>
         <div className='section'>
           <div className='stats'>
-            <div className='activity'></div>
+            <div className='activity'>
+              <div className="activityHeader">
+                <h3>Activité quotidienne</h3>
+                <div className="activityLegend">
+                  <div><span></span><h3>Poids(kg)</h3></div>
+                  <div><span></span><h3>Calories brulées(kCal)</h3></div>
+                </div>
+              </div>
+
+            </div>
             <div className='charts'>
               <div className='average'></div>
-              <div className='intensity'></div>
+              <div className='scope'></div>
               <div className='score'></div>
             </div>
           </div>
-          <div className='nutrition'></div>
+          <div className='nutrition'>
+            <div className="nutrients marginBottom">
+              <div className="IconeContainer">
+                <span className="iconeNutrients"></span>
+              </div>
+              <div className='nutrientText'>
+                <h2></h2>
+                <h3></h3>
+              </div>
+            </div>
+            <div className="nutrients marginBottom">
+              <div className="IconeContainer">
+                <span className="iconeNutrients"></span>
+              </div>
+              <div className='nutrientText'>
+                <h2></h2>
+                <h3></h3>
+              </div>
+            </div>
+            <div className="nutrients marginBottom">
+              <div className="IconeContainer">
+                <span className="iconeNutrients"></span>
+              </div>
+              <div className='nutrientText'>
+                <h2></h2>
+                <h3></h3>
+              </div>
+            </div>
+            <div className="nutrients">
+              <div className="IconeContainer">
+                <span className="iconeNutrients"></span>
+              </div>
+              <div className='nutrientText'>
+                <h2></h2>
+                <h3></h3>
+              </div>
+            </div>
+            
+          </div>
         </div>
       </div>
     </div>

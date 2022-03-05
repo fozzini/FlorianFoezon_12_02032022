@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Radar = () => {
+const Average = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Radar = () => {
   );
 };
 
-export default Radar;
+export default Average;

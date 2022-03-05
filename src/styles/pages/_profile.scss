@@ -30,6 +30,61 @@
   }
   .section{
     display:flex;
-    
+    .stats{
+      display: flex;
+      flex-direction: column;
+      .activity{
+        display:flex;
+        background-color: $color-11;
+        height:26vh;
+        width:57vw;
+        .activityHeader{
+          display: flex;
+          justify-content:space-between;
+          width:100vw;
+          align-content:flex-start ;
+          .activityLegend{
+            display: flex;
+          }
+        }
+      }
+      .charts{
+        display:flex;
+        height:26vh;
+        width:57vw;
+        margin-top:3vh;
+        justify-content:space-between;
+
+        .average{
+          width:30%;
+          background-color: $color-1;
+        }
+        .scope{
+          width:30%;
+          background-color: $color-1;
+        }
+        .score{
+          width:30%;
+          background-color: $color-1;
+        }
+      }
+    }
+    .nutrition{
+
+      width:17vw;
+      height:55vh;
+      margin-left: 2vw;
+      .nutrients{
+        display: flex;
+        flex-direction: column;
+        background-color: $color-1;
+        height:20%;
+        width:100%;
+      }
+    }
   }
+  
+}
+.marginBottom{
+  margin-bottom:2.33vw;
 }

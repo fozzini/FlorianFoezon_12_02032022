@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Weight = () => {
+const scope = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Weight = () => {
   );
 };
 
-export default Weight;
+export default scope;
