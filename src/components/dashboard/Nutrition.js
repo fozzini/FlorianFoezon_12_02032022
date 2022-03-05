@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NutritionTags = () => {
+const Nutrition = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const NutritionTags = () => {
   );
 };
 
-export default NutritionTags;
+export default Nutrition;
