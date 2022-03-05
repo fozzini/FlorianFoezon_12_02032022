@@ -23,9 +23,13 @@ const Profil = () => {
           <h3>Félicitation ! Vous avez explosé vos objectifs hier 👏</h3>
         </div>
         <div className='section'>
-          <div>
+          <div className='stats'>
             <div className='activity'></div>
-            <div className='charts'></div>
+            <div className='charts'>
+              <div className='average'></div>
+              <div className='intensity'></div>
+              <div className='score'></div>
+            </div>
           </div>
           <div className='nutrition'></div>
         </div>
