@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import { MainDataContext } from '../utils/services/ApiContextMainData';
 import HorizontalNav from '../components/nav/HorizontalNav';
 import VerticalNav from '../components/nav/VerticalNav';
+import Oval_grey from '../assets/Oval_grey.svg';
+import Oval_red from '../assets/Oval_red.svg';
 
 const Profil = () => {
   const savedUser = parseInt(localStorage.getItem("user"));
@@ -28,8 +30,8 @@ const Profil = () => {
               <div className="activityHeader">
                 <h3>Activité quotidienne</h3>
                 <div className="activityLegend">
-                  <div><span></span><h3>Poids(kg)</h3></div>
-                  <div><span></span><h3>Calories brulées(kCal)</h3></div>
+                  <div className="element"><img src={Oval_grey} alt="rond gris"/><h3>Poids(kg)</h3></div>
+                  <div className="element"><img src={Oval_red} alt="rond rouge"/><h3>Calories brulées(kCal)</h3></div>
                 </div>
               </div>
 

@@ -45,6 +45,10 @@
           align-content:flex-start ;
           .activityLegend{
             display: flex;
+            .element{
+              display:flex;
+              align-content: start;
+            }
           }
         }
       }
@@ -88,3 +92,5 @@
 .marginBottom{
   margin-bottom:2.33vw;
 }
+
+
