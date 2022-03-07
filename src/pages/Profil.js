@@ -10,6 +10,7 @@ import energy from '../assets/energy.svg';
 import chicken from '../assets/chicken.svg';
 import apple from '../assets/apple.svg';
 import cheeseburger from '../assets/cheeseburger.svg';
+import Activity from '../components/dashboard/Activity';
 
 const Profil = () => {
   const savedUser = parseInt(localStorage.getItem("user"));
@@ -36,6 +37,7 @@ const Profil = () => {
                   <div className="element"><img src={Oval_red} alt="rond rouge"/><h3>Calories brulées(kCal)</h3></div>
                 </div>
               </div>
+              <Activity/>
             </div>
 
             <div className='charts'>
