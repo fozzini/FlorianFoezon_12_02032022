@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 const Activity = (props) => {
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width='100%' height={200}>
       <BarChart
         width={300}
         height={300}

@@ -49,13 +49,14 @@ const Profil = () => {
 
             <div className='charts'>
               <div className='average'>
+                <h3>Durée moyenne des sessions</h3>
                 <Average/>
               </div>
               <div className='scope'>
                 <Scope/>
               </div>
               <div className='score'>
-                <h1>Score</h1>
+                <h2>Score</h2>
                 <Score />
               </div>
             </div>

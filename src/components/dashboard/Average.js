@@ -4,53 +4,53 @@ import { CartesianAxis, CartesianGrid, Line, LineChart, ResponsiveContainer, Too
 const Average = () => {
   const data = [
     {
-      name: 'Page A',
-      uv: 4000,
+      name: 'L',
+      uv: 30,
       pv: 2400,
       amt: 2400,
     },
     {
-      name: 'Page B',
-      uv: 3000,
+      name: 'M',
+      uv: 23,
       pv: 1398,
       amt: 2210,
     },
     {
-      name: 'Page C',
-      uv: 2000,
+      name: 'M',
+      uv: 45,
       pv: 9800,
       amt: 2290,
     },
     {
-      name: 'Page D',
-      uv: 2780,
+      name: 'J',
+      uv: 0,
       pv: 3908,
       amt: 2000,
     },
     {
-      name: 'Page E',
-      uv: 1890,
+      name: 'V',
+      uv: 0,
       pv: 4800,
       amt: 2181,
     },
     {
-      name: 'Page F',
-      uv: 2390,
+      name: 'S',
+      uv: 23,
       pv: 3800,
       amt: 2500,
     },
     {
-      name: 'Page G',
-      uv: 3490,
+      name: 'D',
+      uv: 60,
       pv: 4300,
       amt: 2100,
     },
   ];
     
   return (
-  <ResponsiveContainer width="100%" height="100%">
+  <ResponsiveContainer width='100%' >
     <LineChart
-      width={500}
+      width={600}
       height={300}
       data={data}
       margin={{
@@ -60,13 +60,13 @@ const Average = () => {
         bottom: 5,
       }}
     >
-      <CartesianAxis axisLine={false} tickLine={false}/>
+      <CartesianAxis axisLine={false} vertical={false} />
       <CartesianGrid vertical={false} horizontal={false} />
-      <XAxis hide={true} dataKey="name" />
-      <YAxis hide={true}/>
+      <XAxis  tickLine={false} axisLine={false} stroke="#ffffff" dataKey="name" />
+      <YAxis hide={true} />
       <Tooltip />
       
-      <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+      <Line type="monotone" dataKey="uv" stroke="#ffffff" dot={false} activeDot={{ stroke: 'white', strokeWidth: 2, r: 5 }}  />
     </LineChart>
   </ResponsiveContainer>
   );
