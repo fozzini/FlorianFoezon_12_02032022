@@ -11,15 +11,22 @@ import chicken from '../assets/chicken.svg';
 import apple from '../assets/apple.svg';
 import cheeseburger from '../assets/cheeseburger.svg';
 import Activity from '../components/dashboard/Activity';
+import { ActivityContext } from '../utils/services/ApiContextActivity';
+import Score from '../components/dashboard/Score';
+import Scope from '../components/dashboard/scope';
+import Average from '../components/dashboard/Average';
 
 const Profil = () => {
   const savedUser = parseInt(localStorage.getItem("user"));
   const {USER_MAIN_DATA} = useContext(MainDataContext);
+  const {USER_ACTIVITY} = useContext(ActivityContext);
+  const currentUserActivity = {USER_ACTIVITY}.USER_ACTIVITY[savedUser];
   const currentUserMainData = {USER_MAIN_DATA}.USER_MAIN_DATA[savedUser];
   const userInfos = currentUserMainData.userInfos;
+  const score = currentUserMainData.score;
   const keydata = currentUserMainData.keyData ;
-  console.log(keydata)
-
+  const sessions = currentUserActivity.sessions;
+ 
   return (
     <div className='profilContainer'>
       <HorizontalNav/>
@@ -37,13 +44,20 @@ const Profil = () => {
                   <div className="element"><img src={Oval_red} alt="rond rouge"/><h3>Calories brulées(kCal)</h3></div>
                 </div>
               </div>
-              <Activity/>
+              <Activity data={sessions}/>
             </div>
 
             <div className='charts'>
-              <div className='average'></div>
-              <div className='scope'></div>
-              <div className='score'></div>
+              <div className='average'>
+                <Average/>
+              </div>
+              <div className='scope'>
+                <Scope/>
+              </div>
+              <div className='score'>
+                <h1>Score</h1>
+                <Score />
+              </div>
             </div>
             
           </div>
