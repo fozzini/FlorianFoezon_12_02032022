@@ -23,7 +23,7 @@ const Average = () => {
     },
     {
       name: 'J',
-      uv: 0,
+      uv: 15,
       pv: 3908,
       amt: 2000,
     },
@@ -41,32 +41,28 @@ const Average = () => {
     },
     {
       name: 'D',
-      uv: 60,
+      uv: 40,
       pv: 4300,
       amt: 2100,
     },
   ];
     
   return (
+    
   <ResponsiveContainer width='100%' >
     <LineChart
-      width={600}
-      height={300}
+     
       data={data}
       margin={{
         top: 5,
-        right: 30,
-        left: 20,
+        right: 0,
+        left: 0,
         bottom: 5,
       }}
     >
-      <CartesianAxis axisLine={false} vertical={false} />
-      <CartesianGrid vertical={false} horizontal={false} />
-      <XAxis  tickLine={false} axisLine={false} stroke="#ffffff" dataKey="name" />
-      <YAxis hide={true} />
+      <XAxis  tickLine={false} axisLine={false} stroke="#ffffff" dataKey="name" height={20} padding={{ left: 3, right: 0 }} />
       <Tooltip />
-      
-      <Line type="monotone" dataKey="uv" stroke="#ffffff" dot={false} activeDot={{ stroke: 'white', strokeWidth: 2, r: 5 }}  />
+      <Line type="monotone" dataKey="uv" stroke="#ffffff" dot={false} activeDot={{ stroke: 'white', strokeWidth: 2, r: 5 }} />
     </LineChart>
   </ResponsiveContainer>
   );

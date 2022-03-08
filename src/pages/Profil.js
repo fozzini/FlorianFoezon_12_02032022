@@ -4,8 +4,7 @@ import HorizontalNav from '../components/nav/HorizontalNav';
 import VerticalNav from '../components/nav/VerticalNav';
 import Nutrition from '../components/dashboard/Nutrition';
 import Header from '../components/dashboard/Header';
-import Oval_grey from '../assets/Oval_grey.svg';
-import Oval_red from '../assets/Oval_red.svg';
+
 import energy from '../assets/energy.svg';
 import chicken from '../assets/chicken.svg';
 import apple from '../assets/apple.svg';
@@ -35,21 +34,12 @@ const Profil = () => {
         <Header firstName={userInfos.firstName} key={userInfos.firstName}/>
         <div className='section'>
           <div className='stats'>
-
             <div className='activity'>
-              <div className="activityHeader">
-                <h3 className='headerTitle'>Activité quotidienne</h3>
-                <div className="activityLegend">
-                  <div className="element"><img src={Oval_grey} alt="rond gris"/><h3>Poids(kg)</h3></div>
-                  <div className="element"><img src={Oval_red} alt="rond rouge"/><h3>Calories brulées(kCal)</h3></div>
-                </div>
-              </div>
               <Activity data={sessions}/>
             </div>
-
             <div className='charts'>
               <div className='average'>
-                <h3>Durée moyenne des sessions</h3>
+                <h3>Durée moyenne des<br/>sessions</h3>
                 <Average/>
               </div>
               <div className='scope'>
@@ -57,6 +47,10 @@ const Profil = () => {
               </div>
               <div className='score'>
                 <h2>Score</h2>
+                <div className='scoreCenter'>
+                  <h4>12%</h4>
+                  <h5>de votre <br/>objectif</h5>
+                </div>
                 <Score />
               </div>
             </div>

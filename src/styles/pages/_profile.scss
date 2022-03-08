@@ -93,8 +93,9 @@
           color:$color-7;
           
           h3{
-            
             position:absolute;
+            margin-left:2%;
+            font-weight: lighter;
           }
           
         }
@@ -106,11 +107,33 @@
         }
         .score{
           display:flex;
+          flex-direction: column;
           border-radius:5px;
           width:30%;
-          background-color: $color-11;
+          background-color: $color-12;
+          position: relative;
+          .scoreCenter{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%, -50%);
+            justify-content: center;
+            align-items: center;            
+            h4{
+              margin: 0;
+              font-size: medium;
+            }
+            h5{
+              margin: 0;
+              color:grey;
+            }
+          }
           h2{
-            position:absolute;
+            margin-top: 5%;
+            margin-bottom: 0px;
+            margin-left: 10%;
           }
         }
       }

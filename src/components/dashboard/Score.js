@@ -8,7 +8,7 @@ const data = [
 const Score = () => {
   
   return (                    
-  <div style={{ width: '100%', height: 200 }}>
+  
     <ResponsiveContainer width='100%' >
       <PieChart>
         
@@ -30,7 +30,7 @@ const Score = () => {
         </Pie>
       </PieChart>
     </ResponsiveContainer>
-  </div>
+  
     
     );
  
