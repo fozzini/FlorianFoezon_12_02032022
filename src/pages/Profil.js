@@ -22,7 +22,6 @@ const Profil = () => {
   const currentUserActivity = {USER_ACTIVITY}.USER_ACTIVITY[savedUser];
   const currentUserMainData = {USER_MAIN_DATA}.USER_MAIN_DATA[savedUser];
   const userInfos = currentUserMainData.userInfos;
-  const score = currentUserMainData.score;
   const keydata = currentUserMainData.keyData ;
   const sessions = currentUserActivity.sessions;
  
