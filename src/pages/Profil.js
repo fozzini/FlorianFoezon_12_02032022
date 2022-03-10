@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { MainDataContext } from '../utils/services/ApiContextMainData';
+import { dataContext } from '../utils/services/ApiContext';
 import HorizontalNav from '../components/nav/HorizontalNav';
 import VerticalNav from '../components/nav/VerticalNav';
 import Nutrition from '../components/dashboard/Nutrition';
@@ -10,15 +10,15 @@ import chicken from '../assets/chicken.svg';
 import apple from '../assets/apple.svg';
 import cheeseburger from '../assets/cheeseburger.svg';
 import Activity from '../components/dashboard/Activity';
-import { ActivityContext } from '../utils/services/ApiContextActivity';
+
 import Score from '../components/dashboard/Score';
 import Scope from '../components/dashboard/scope';
 import Average from '../components/dashboard/Average';
 
 const Profil = () => {
   const savedUser = parseInt(localStorage.getItem("user"));
-  const {USER_MAIN_DATA} = useContext(MainDataContext);
-  const {USER_ACTIVITY} = useContext(ActivityContext);
+  const {USER_MAIN_DATA} = useContext(dataContext);
+  const {USER_ACTIVITY} = useContext(dataContext);
   const currentUserActivity = {USER_ACTIVITY}.USER_ACTIVITY[savedUser];
   const currentUserMainData = {USER_MAIN_DATA}.USER_MAIN_DATA[savedUser];
   const userInfos = currentUserMainData.userInfos;

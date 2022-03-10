@@ -20,7 +20,11 @@ const Activity = (props) => {
         <CartesianGrid vertical={false} strokeDasharray="3 1" />
         <XAxis tickLine={false} dataKey="index"/>
         <YAxis tickLine={false} dataKey="kilogram" axisLine={false} orientation="right" tickCount={3}/>
+<<<<<<< HEAD
         <Tooltip />
+=======
+        <Tooltip  />
+>>>>>>> 4e5987b65ca41042b7227c0422e632187d11622b
         <Bar dataKey="kilogram" fill="#282D30" barSize={10} radius={[5, 5, 0, 0]} />
         <Bar dataKey="calories" fill="#E60000" barSize={10} radius={[5, 5, 0, 0]}/>
       </BarChart>
