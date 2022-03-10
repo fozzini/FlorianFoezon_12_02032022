@@ -1,5 +1,5 @@
 import React from 'react';
-import { CartesianAxis, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 
 const Average = () => {
   const data = [

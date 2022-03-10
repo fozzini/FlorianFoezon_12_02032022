@@ -15,8 +15,10 @@ import Score from '../components/dashboard/Score';
 import Scope from '../components/dashboard/scope';
 import Average from '../components/dashboard/Average';
 
+export const savedUser = () => parseInt(localStorage.getItem("user"));
+
 const Profil = () => {
-  const savedUser = parseInt(localStorage.getItem("user"));
+  
   const {USER_MAIN_DATA} = useContext(dataContext);
   const {USER_ACTIVITY} = useContext(dataContext);
   const currentUserActivity = {USER_ACTIVITY}.USER_ACTIVITY[savedUser];
