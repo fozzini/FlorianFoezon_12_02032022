@@ -4,7 +4,7 @@ const Nutrition = (props) => {
 
   return (
     <div className="nutrients">
-      <div className={props.classname}>
+      <div className={`IconeContainer ${props.classname}`}>
         <img src={props.icon} alt={props.icon} className="iconeNutrients"/>
       </div>
       <div className='nutrientText'>

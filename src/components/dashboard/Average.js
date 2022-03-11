@@ -1,70 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
+import { dataContext } from '../../utils/services/ApiContext';
+import { savedUser } from '../../pages/Profil';
 
 const Average = () => {
-  const data = [
-    {
-      name: 'L',
-      uv: 30,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: 'M',
-      uv: 23,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: 'M',
-      uv: 45,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: 'J',
-      uv: 15,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: 'V',
-      uv: 0,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: 'S',
-      uv: 23,
-      pv: 3800,
-      amt: 2500,
-    },
-    {
-      name: 'D',
-      uv: 40,
-      pv: 4300,
-      amt: 2100,
-    },
-  ];
-    
+  const days=["L","M","M","J","V","S","D"];
+  const {USER_AVERAGE_SESSIONS} = useContext(dataContext);
+  const currentUserAverageSessions = {USER_AVERAGE_SESSIONS}.USER_AVERAGE_SESSIONS[savedUser()];
+  const averageSessions = currentUserAverageSessions.sessions;
+  averageSessions.map((e,index)=> Object.assign(averageSessions[index], {day: days[index]}));
+  
   return (
-    
-  <ResponsiveContainer width='100%' >
-    <LineChart
-     
-      data={data}
-      margin={{
-        top: 5,
-        right: 0,
-        left: 0,
-        bottom: 5,
-      }}
-    >
-      <XAxis  tickLine={false} axisLine={false} stroke="#ffffff" dataKey="name" height={20} padding={{ left: 3, right: 0 }} />
-      <Tooltip />
-      <Line type="monotone" dataKey="uv" stroke="#ffffff" dot={false} activeDot={{ stroke: 'white', strokeWidth: 2, r: 5 }} />
-    </LineChart>
-  </ResponsiveContainer>
+  <div className='average'>
+    <h3>Durée moyenne des<br/>sessions</h3>
+    <ResponsiveContainer width='100%' >
+      <LineChart data={averageSessions} margin={{top: 5,right: 0,left: 0,bottom: 5,}}>
+        <XAxis tickLine={false} axisLine={false} stroke="#ffffff" dataKey="day" height={20} padding={{ left: 3, right: 0 }} />
+        <Tooltip contentStyle={{border:"none",padding:0}}
+            itemStyle={{ color: "black",backgroundColor: "white",padding:5}}
+            formatter={(value) => [value +" min"]}
+            labelFormatter={() => ``}
+            cursor={{color: 'blue'}}/> 
+            
+        <Line type="monotone" dataKey="sessionLength" stroke="#ffffff" dot={false} legendType="cross" activeDot={{ stroke: 'white',strokeOpacity:"0.4", strokeWidth: 10, r: 3 }} />
+      </LineChart>
+    </ResponsiveContainer>
+  </div>
   );
 };
 

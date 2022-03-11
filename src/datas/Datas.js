@@ -35,8 +35,7 @@ export const USER_ACTIVITY = [
   {
       userId: 12,
       sessions: [
-          {   
-              
+          {     
               day: '2020-07-01',
               kilogram: 80,
               calories: 240

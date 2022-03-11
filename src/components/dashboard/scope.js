@@ -42,6 +42,7 @@ const data = [
 const Scope = () => {
   
   return (
+    <div className='scope'>
     <ResponsiveContainer width='100%' >
       <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
         <PolarGrid />
@@ -50,6 +51,7 @@ const Scope = () => {
         <Radar name="Mike" dataKey="A" stroke="#FF0000" fill="#FF0000" fillOpacity={0.6} />
       </RadarChart>
     </ResponsiveContainer>
+    </div>
   );
 };
 

@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Oval_grey from '../../assets/Oval_grey.svg';
 import Oval_red from '../../assets/Oval_red.svg';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, CartesianAxis } from 'recharts';
+import { dataContext } from '../../utils/services/ApiContext';
+import { savedUser } from '../../pages/Profil';
 
-const Activity = (props) => {
-
+const Activity = () => {
+  const {USER_ACTIVITY} = useContext(dataContext);
+  const currentUserActivity = {USER_ACTIVITY}.USER_ACTIVITY[savedUser()];
+  const sessions = currentUserActivity.sessions;
+  sessions.map((e,index)=> Object.assign(sessions[index], {index: index +1}));
+  
   return (
     <div>
     <div className="activityHeader">
@@ -15,14 +21,19 @@ const Activity = (props) => {
       </div>
     </div>
     <ResponsiveContainer width='100%' height={200}>
-      <BarChart data={props.data} margin={{top: 5,right: -5,left: 15,bottom: 5}}>
-        <CartesianAxis axisLine={false}/>
+      <BarChart data={sessions} margin={{top: 5,right: -5,left:-30,bottom: -15}} >
         <CartesianGrid vertical={false} strokeDasharray="3 1" />
         <XAxis tickLine={false} dataKey="index"/>
-        <YAxis tickLine={false} dataKey="kilogram" axisLine={false} orientation="right" tickCount={3}/>
-        <Tooltip />
-        <Bar dataKey="kilogram" fill="#282D30" barSize={10} radius={[5, 5, 0, 0]} />
-        <Bar dataKey="calories" fill="#E60000" barSize={10} radius={[5, 5, 0, 0]}/>
+        <YAxis yAxisId="right" orientation="right" axisLine={false} tickLine={false} domain={['dataMin - 1', 'dataMax + 1']} tickCount={4}/>
+        <YAxis yAxisId="left" orientation="left" axisLine={false} tickLine={false} tick={false} />
+        <Tooltip 
+            contentStyle={{backgroundColor: "#E60000", border:"none"}}
+            itemStyle={{ color: "white",backgroundColor: "#E60000" }}
+            formatter={(value,name) => [value + (name === "kilogram" ? 'kg' : 'kcal')]}
+            labelFormatter={() => ``}/>
+        <Bar yAxisId="right" dataKey="kilogram"  fill="#E60000" barSize={10} radius={[5, 5, 0, 0]}/>
+        <Bar yAxisId="left" dataKey="calories" fill="#282D30" barSize={10} radius={[5, 5, 0, 0]} />
+        
       </BarChart>
     </ResponsiveContainer>
     </div>
