@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer } from 'recharts';
+import { savedUser } from '../../pages/Profil';
+import { dataContext } from '../../utils/services/ApiContext';
 
 const data = [
   {
@@ -39,12 +41,14 @@ const data = [
     fullMark: 150,
   },
 ];
-const Scope = () => {
-  
+const StatsRadar = () => {
+  const {USER_ACTIVITY} = useContext(dataContext);
+  const currentUserActivity = {USER_ACTIVITY}.USER_ACTIVITY[savedUser()];
+  const sessions = currentUserActivity.sessions;
   return (
-    <div className='scope'>
+    <div className='StatsRadar'>
     <ResponsiveContainer width='100%' >
-      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data} margin={{top:10,right: 20,left:10,bottom:10}}>
         <PolarGrid />
         <PolarAngleAxis dataKey="subject" stroke="#ffffff" fill="#ffffff" tickLine={false} />
         <PolarRadiusAxis tick={false} axisLine={false} />
@@ -55,4 +59,4 @@ const Scope = () => {
   );
 };
 
-export default Scope;
+export default StatsRadar;

@@ -10,7 +10,7 @@ import apple from '../assets/apple.svg';
 import cheeseburger from '../assets/cheeseburger.svg';
 import Activity from '../components/dashboard/Activity';
 import Score from '../components/dashboard/Score';
-import Scope from '../components/dashboard/scope';
+import StatsRadar from '../components/dashboard/StatsRadar';
 import Average from '../components/dashboard/Average';
 
 export const savedUser = () => parseInt(localStorage.getItem("user"));
@@ -34,7 +34,7 @@ const Profil = () => {
             </div>
             <div className='charts'>
               <Average/>
-              <Scope/>
+              <StatsRadar/>
               <Score />
             </div>
           </div>
