@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
 const Nutrition = (props) => {
 
@@ -14,5 +15,11 @@ const Nutrition = (props) => {
     </div>
   );
 };
-
+Nutrition.propTypes = {
+  classname: PropTypes.string,
+  icon: PropTypes.string,
+  element: PropTypes.number,
+  elementUnit: PropTypes.string,
+  text: PropTypes.string
+};
 export default Nutrition;

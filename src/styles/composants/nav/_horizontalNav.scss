@@ -18,16 +18,17 @@ padding-right: 6.5vw;
     width:4vw;
  
   }
-  .text-color{
-    color: $color-1;
-    h3{
-      font-weight: lighter;
-    }
-  }
   .text{
+    color: $color-7;
     h3{
       font-weight: lighter;
       color: $color-7;
     }
   }
+  .text-color{
+    h3{
+      color: $color-1;
+    }
+  }
 }
+

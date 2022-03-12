@@ -110,13 +110,11 @@
             left:0.5%;
             margin: 0;
           }
-          
         }
         .StatsRadar{
           border-radius:5px;
-          width:30%;
+          width:29%;
           background-color: $color-6;
-          
         }
         .score{
           display:flex;
@@ -210,6 +208,13 @@
       }
     }
   }
+}
+.errorMessage{
+  display: flex;
+  height:100vh;
+  justify-content:center;
+  align-items: center;
+  font-size: 40px;
 }
 
 

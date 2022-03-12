@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Oval_grey from '../../assets/Oval_grey.svg';
 import Oval_red from '../../assets/Oval_red.svg';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, CartesianAxis } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { dataContext } from '../../utils/services/ApiContext';
 import { savedUser } from '../../pages/Profil';
 
@@ -10,7 +10,7 @@ const Activity = () => {
   const currentUserActivity = {USER_ACTIVITY}.USER_ACTIVITY[savedUser()];
   const sessions = currentUserActivity.sessions;
   sessions.map((e,index)=> Object.assign(sessions[index], {index: index +1}));
-  
+
   return (
     <div>
     <div className="activityHeader">

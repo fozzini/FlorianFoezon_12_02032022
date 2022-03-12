@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, Rectangle, YAxis } from 'recharts';
 import { dataContext } from '../../utils/services/ApiContext';
 import { savedUser } from '../../pages/Profil';
+import { PropTypes } from 'prop-types';
 
 const Average = () => {
   const days=["L","M","M","J","V","S","D"];
@@ -23,6 +24,11 @@ const Average = () => {
         height={height}
       />
     );
+  };
+  CustomCursor.propTypes = {
+    points: PropTypes.number,
+    width: PropTypes.number,
+    height: PropTypes.number,
   };
   return (
   <div className='average'>
