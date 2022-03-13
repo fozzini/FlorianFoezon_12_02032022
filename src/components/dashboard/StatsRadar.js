@@ -4,8 +4,8 @@ import { savedUser } from '../../pages/Profil';
 import { dataContext } from '../../utils/services/ApiContext';
 
 const StatsRadar = () => {
-  const {USER_PERFORMANCE} = useContext(dataContext);
-  const currentUserPerformance = {USER_PERFORMANCE}.USER_PERFORMANCE[savedUser()];
+  const {PERFORMANCE} = useContext(dataContext);
+  const currentUserPerformance = {PERFORMANCE}.PERFORMANCE.USER_PERFORMANCE[savedUser()];
   currentUserPerformance.data.map((e,index)=> Object.assign(currentUserPerformance.data[index], {kind: currentUserPerformance.kind[index+1]}));
   return (
     <div className='StatsRadar'>

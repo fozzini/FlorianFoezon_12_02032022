@@ -3,8 +3,8 @@ import { savedUser } from '../../pages/Profil.js';
 import { dataContext } from '../../utils/services/ApiContext.js'
 
 const Header = () => {
-  const {USER_MAIN_DATA} = useContext(dataContext);
-  const currentUserMainData = {USER_MAIN_DATA}.USER_MAIN_DATA[savedUser()];
+  const {MAIN_DATA} = useContext(dataContext);
+  const currentUserMainData = {MAIN_DATA}.MAIN_DATA[savedUser()];
   const userInfos = currentUserMainData.userInfos;
   return (
     <div>

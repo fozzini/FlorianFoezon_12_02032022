@@ -13,12 +13,13 @@ import Score from '../components/dashboard/Score';
 import StatsRadar from '../components/dashboard/StatsRadar';
 import Average from '../components/dashboard/Average';
 
+
 export const savedUser = () => parseInt(localStorage.getItem("user"));
 
 const Profil = () => {
   
-  const {USER_MAIN_DATA} = useContext(dataContext);
-  const currentUserMainData = {USER_MAIN_DATA}.USER_MAIN_DATA[savedUser()];
+  const {MAIN_DATA} = useContext(dataContext);
+  const currentUserMainData = {MAIN_DATA}.MAIN_DATA[savedUser()];
   const keydata = currentUserMainData.keyData ;
   
   return (

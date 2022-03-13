@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, Rectangle, YAxis } from 'recharts';
+import { Line, LineChart, ResponsiveContainer, Tooltip, Rectangle, YAxis } from 'recharts';
 import { dataContext } from '../../utils/services/ApiContext';
 import { savedUser } from '../../pages/Profil';
 import { PropTypes } from 'prop-types';
 
 const Average = () => {
-  const days=["L","M","M","J","V","S","D"];
-  const {USER_AVERAGE_SESSIONS} = useContext(dataContext);
-  const currentUserAverageSessions = {USER_AVERAGE_SESSIONS}.USER_AVERAGE_SESSIONS[savedUser()];
+  
+  const {AVERAGE_SESSIONS} = useContext(dataContext);
+  console.log(savedUser())
+  const currentUserAverageSessions = {AVERAGE_SESSIONS}.AVERAGE_SESSIONS.USER_AVERAGE_SESSIONS[savedUser()];
   const averageSessions = currentUserAverageSessions.sessions;
   
   const CustomCursor = (props) => {
@@ -26,7 +27,7 @@ const Average = () => {
     );
   };
   CustomCursor.propTypes = {
-    points: PropTypes.number,
+    points: PropTypes.array,
     width: PropTypes.number,
     height: PropTypes.number,
   };

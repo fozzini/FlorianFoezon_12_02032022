@@ -6,8 +6,8 @@ import { dataContext } from '../../utils/services/ApiContext';
 const data = [];
 
 const Score = () => {
-  const {USER_MAIN_DATA} = useContext(dataContext);
-  const currentUserMainData = {USER_MAIN_DATA}.USER_MAIN_DATA[savedUser()];
+  const {MAIN_DATA} = useContext(dataContext);
+  const currentUserMainData = {MAIN_DATA}.MAIN_DATA[savedUser()];
   const userScore = currentUserMainData.score;
   Object.assign(currentUserMainData, { value: 100  ,value: userScore*100});
   data.splice(0,2,{ value: 100 } ,{value: userScore*100});

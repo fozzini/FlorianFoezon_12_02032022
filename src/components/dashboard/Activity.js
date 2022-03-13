@@ -6,8 +6,8 @@ import { dataContext } from '../../utils/services/ApiContext';
 import { savedUser } from '../../pages/Profil';
 
 const Activity = () => {
-  const {USER_ACTIVITY} = useContext(dataContext);
-  const currentUserActivity = {USER_ACTIVITY}.USER_ACTIVITY[savedUser()];
+  const {ACTIVITY} = useContext(dataContext);
+  const currentUserActivity = {ACTIVITY}.ACTIVITY[savedUser()];
   const sessions = currentUserActivity.sessions;
   sessions.map((e,index)=> Object.assign(sessions[index], {index: index +1}));
 
