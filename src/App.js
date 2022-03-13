@@ -10,15 +10,15 @@ const App = () => {
   
   return (
     <BrowserRouter>
-    <ApiContext>
     
+    <ApiContext>
      <Routes>
-       <Route path='/' element={< Home />}/>
+      <Route path='/' element={< Home />}/>
        <Route path='/Profil' element={<Profil/>}/>
-       <Route path='*' element={<Error/>}/>
+      <Route path='*' element={<Error/>}/>
      </Routes>
+    </ApiContext>
      
-     </ApiContext>
     </BrowserRouter>
   );
 };
