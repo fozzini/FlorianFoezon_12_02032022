@@ -1,16 +1,13 @@
 import React, { useContext } from 'react';
 import { Line, LineChart, ResponsiveContainer, Tooltip, Rectangle, YAxis } from 'recharts';
-import { dataContext } from '../../utils/services/ApiContext';
 import { savedUser } from '../../pages/Profil';
+import { dataContext } from '../../utils/services/ApiContext';
 import { PropTypes } from 'prop-types';
 
 const Average = () => {
   
   const {AVERAGE_SESSIONS} = useContext(dataContext);
-  console.log(savedUser())
-  const currentUserAverageSessions = {AVERAGE_SESSIONS}.AVERAGE_SESSIONS.USER_AVERAGE_SESSIONS[savedUser()];
-  const averageSessions = currentUserAverageSessions.sessions;
-  
+  const AverageSessions = {AVERAGE_SESSIONS}.AVERAGE_SESSIONS[savedUser()].sessions;
   const CustomCursor = (props) => {
     const { points, width, height } = props;
     const { x, y } = points[0];
@@ -44,7 +41,7 @@ const Average = () => {
       <span>D</span>
     </div>
     <ResponsiveContainer width='100%' >
-      <LineChart data={averageSessions} margin={{top:0,right: 0,left: -60,bottom: 0}} >
+      <LineChart data={AverageSessions} margin={{top:0,right: 0,left: -60,bottom: 0}} >
         <YAxis tickLine={false} axisLine={false} tick={false} domain={['dataMin - 10', 'dataMax + 10']}/>
         <Tooltip 
           cursor={<CustomCursor />}
