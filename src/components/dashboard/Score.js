@@ -17,7 +17,7 @@ const Score = () => {
 */
   const {MAIN_DATA} = useContext(dataContext);
   const currentUserMainData = {MAIN_DATA}.MAIN_DATA[savedUser()];
-  const userScore = currentUserMainData.score;
+  const userScore = currentUserMainData.score || currentUserMainData.todayScore ;
   Object.assign(currentUserMainData, { value: 100  ,value: userScore*100});
   data.splice(0,2,{ value: 100 } ,{value: userScore*100});
   return (                    
