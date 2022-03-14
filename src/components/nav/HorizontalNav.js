@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import group from "../../assets/group.svg"
 
 const HorizontalNav = () => {
+/**
+* create horizontal component
+*
+* @return html - horizontal component
+*/
   return (
     <div className='horizontalNavContainer'>
       <div className='logo'><img src={group} alt="logo"/></div>

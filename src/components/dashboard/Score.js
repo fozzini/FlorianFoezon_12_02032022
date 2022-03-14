@@ -2,10 +2,19 @@ import React, { useContext } from 'react';
 import { PieChart, Pie,  Cell, ResponsiveContainer } from 'recharts';
 import { savedUser } from '../../pages/Profil';
 import { dataContext } from '../../utils/services/ApiContext';
-
+/**
+* @param data create array of two objects from datas to use with Recharts
+*/
 const data = [];
 
 const Score = () => {
+/**
+* create score component
+* @param Object.assign set datas for recharts
+* @param data.splice set data array for recharts
+* @param {Main-DATA} consume datas from context
+* @return html - score react component with recharts graphs
+*/
   const {MAIN_DATA} = useContext(dataContext);
   const currentUserMainData = {MAIN_DATA}.MAIN_DATA[savedUser()];
   const userScore = currentUserMainData.score;

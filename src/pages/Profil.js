@@ -13,11 +13,19 @@ import Score from '../components/dashboard/Score';
 import StatsRadar from '../components/dashboard/StatsRadar';
 import Average from '../components/dashboard/Average';
 
-
+/**
+* @param savedUser get the user selected from local storage
+*
+*/
 export const savedUser = () => parseInt(localStorage.getItem("user"));
 
 const Profil = () => {
-  
+/**
+* create profil page
+*
+* @param {MAIN_DATA} consume datas from context
+* @return html - profil page
+*/
   const {MAIN_DATA} = useContext(dataContext);
   const currentUserMainData = {MAIN_DATA}.MAIN_DATA[savedUser()];
   const keydata = currentUserMainData.keyData ;

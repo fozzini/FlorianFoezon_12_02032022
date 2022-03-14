@@ -5,12 +5,15 @@ import Home from "./pages/Home";
 import Profil from "./pages/Profil";
 
 import ApiContext from "./utils/services/ApiContext";
-
+/**
+* Main file
+* Defines routes to follow and place the context
+*
+*/
 const App = () => {
   
   return (
     <BrowserRouter>
-    
     <ApiContext>
      <Routes>
       <Route path='/' element={< Home />}/>
@@ -18,7 +21,6 @@ const App = () => {
       <Route path='*' element={<Error/>}/>
      </Routes>
     </ApiContext>
-     
     </BrowserRouter>
   );
 };

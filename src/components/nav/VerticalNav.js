@@ -5,6 +5,11 @@ import vnav3 from '../../assets/vnav3.svg';
 import vnav4 from '../../assets/vnav4.svg';
 
 const VerticalNav = () => {
+/**
+* create vertical component
+*
+* @return html - vertical component
+*/
   return (
     <div className='verticalNavContainer'>
       <div className='sportsIcones'>

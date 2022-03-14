@@ -1,7 +1,12 @@
 import React, { useContext } from 'react';
 import { savedUser } from '../../pages/Profil.js';
 import { dataContext } from '../../utils/services/ApiContext.js'
-
+/**
+* create Header component
+*
+* @param {MAIN_DATA} consume datas from context
+* @return html - Header react component with recharts graphs
+*/
 const Header = () => {
   const {MAIN_DATA} = useContext(dataContext);
   const currentUserMainData = {MAIN_DATA}.MAIN_DATA[savedUser()];

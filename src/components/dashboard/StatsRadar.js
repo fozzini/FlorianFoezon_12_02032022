@@ -4,6 +4,12 @@ import { savedUser } from '../../pages/Profil';
 import { dataContext } from '../../utils/services/ApiContext';
 
 const StatsRadar = () => {
+/**
+* create statsradar component
+* @param currentUserPerformance.data.map set datas for recharts
+* @param {PERFORMANCE} consume datas from context
+* @return html - statsRadar react component with recharts graphs
+*/
   const {PERFORMANCE} = useContext(dataContext);
   const currentUserPerformance = {PERFORMANCE}.PERFORMANCE[savedUser()];
   currentUserPerformance.data.map((e,index)=> Object.assign(currentUserPerformance.data[index], {kind: currentUserPerformance.kind[index+1]}));

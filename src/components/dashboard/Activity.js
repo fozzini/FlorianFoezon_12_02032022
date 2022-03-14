@@ -6,6 +6,12 @@ import { dataContext } from '../../utils/services/ApiContext';
 import { savedUser } from '../../pages/Profil';
 
 const Activity = () => {
+/**
+* create Activity component
+* @param sessions.map set datas for recharts
+* @param {Activity} consume datas from context
+* @return html - Activity react component with recharts graphs
+*/
   const {ACTIVITY} = useContext(dataContext);
   const currentUserActivity = {ACTIVITY}.ACTIVITY[savedUser()];
   const sessions = currentUserActivity.sessions;

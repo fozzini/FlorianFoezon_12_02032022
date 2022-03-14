@@ -5,7 +5,13 @@ import { dataContext } from '../../utils/services/ApiContext';
 import { PropTypes } from 'prop-types';
 
 const Average = () => {
-  
+/**
+* create Average component
+*
+* @param {AVERAGE_SESSIONS} consume datas from context
+* @param customCursor custom parameter for cursor proptypes checked
+* @return html - Average react component with recharts graphs
+*/
   const {AVERAGE_SESSIONS} = useContext(dataContext);
   const AverageSessions = {AVERAGE_SESSIONS}.AVERAGE_SESSIONS[savedUser()].sessions;
   const CustomCursor = (props) => {

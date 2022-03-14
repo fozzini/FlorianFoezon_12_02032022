@@ -5,7 +5,12 @@ import VerticalNav from '../components/nav/VerticalNav';
 import { dataSource } from '../utils/services/ApiContext';
 
 const Home = () => {
-  
+/**
+* create Home page
+*
+* @component link - create button to set options and redirect to selected page
+* @return html - Home page
+*/
   return (
     <div className='homeContainer'>
       <HorizontalNav/>

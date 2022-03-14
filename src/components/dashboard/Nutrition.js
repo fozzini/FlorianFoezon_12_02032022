@@ -2,7 +2,12 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 
 const Nutrition = (props) => {
-
+/**
+* create Nutrition component.
+* this component use props and get props verified with proptypes. 
+*
+* @return html - nutrition react component.
+*/
   return (
     <div className="nutrients">
       <div className={`IconeContainer ${props.classname}`}>
