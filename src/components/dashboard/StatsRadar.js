@@ -16,7 +16,7 @@ const StatsRadar = () => {
   return (
     <div className='StatsRadar'>
     <ResponsiveContainer width='100%' >
-      <RadarChart outerRadius="55%" data={currentUserPerformance.data} >
+      <RadarChart outerRadius="47%" data={currentUserPerformance.data} >
       <PolarGrid radialLines={false}/>
         <PolarAngleAxis dataKey="kind" stroke="#ffffff" fill="#ffffff" tickLine={false} />
         <Radar dataKey="value" stroke="#FF0000" fill="#FF0000" fillOpacity={0.6} />
