@@ -1,0 +1,38 @@
+.activity{
+  display:flex;
+  flex-direction:column;
+  background-color: $color-12;
+  width: 100%;
+  height: 100%;
+  border-radius:5px;
+  .activityHeader{
+    display: flex;
+    justify-content:space-between;
+    width:100%;
+    align-content:flex-start ;
+    .headerTitle{
+      margin-left: 2vh;
+      font-weight: bolder;
+    }
+    
+    .activityLegend{
+      display: flex;
+      align-items: flex-start;
+      .element{
+        display:flex;
+        align-content: start;
+        margin-right: 2vw;
+        font-weight: lighter;
+        h3{
+          display:flex;
+          font-size: 0.9vw;
+          color:grey;
+        }
+        img{
+          width: 0.5vw;
+          margin-right: 0.5vw;
+        }
+      }
+    }
+  }
+}

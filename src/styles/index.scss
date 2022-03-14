@@ -1,13 +1,17 @@
 @import-normalize;
 @import "./settings";
-@import "./composants/footer";
-@import "./composants/header";
-@import "./composants/card";
-@import "./composants/accordeon";
-@import "./composants/Carousel";
-@import "./composants/StarRating";
+@import "./composants/nav/verticalNav";
+@import "./composants/nav/horizontalNav";
 @import "./pages/home";
-@import "./pages/Apropos.scss";
-@import "./pages/error.scss";
-@import "./pages/FicheLogement";
+@import "./pages/profile";
+@import "./pages/error";
+@import "./composants/dashboard/nutrition";
+@import "./composants/dashboard/score";
+@import "./composants/dashboard/statsRadar";
+@import "./composants/dashboard/average";
+@import "./composants/dashboard/activity";
+@import "./composants/dashboard/header";
+
+
+
 

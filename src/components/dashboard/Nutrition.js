@@ -1,0 +1,30 @@
+import React from 'react';
+import { PropTypes } from 'prop-types';
+
+const Nutrition = (props) => {
+/**
+* create Nutrition component.
+* this component use props and get props verified with proptypes. 
+*
+* @return html - nutrition react component.
+*/
+  return (
+    <div className="nutrients">
+      <div className={`IconeContainer ${props.classname}`}>
+        <img src={props.icon} alt={props.icon} className="iconeNutrients"/>
+      </div>
+      <div className='nutrientText'>
+        <h2>{props.element}{props.elementUnit}</h2>
+        <h3>{props.text}</h3>
+      </div>
+    </div>
+  );
+};
+Nutrition.propTypes = {
+  classname: PropTypes.string,
+  icon: PropTypes.string,
+  element: PropTypes.number,
+  elementUnit: PropTypes.string,
+  text: PropTypes.string
+};
+export default Nutrition;

@@ -1,17 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
-$font-1: "Montserrat", sans-serif;
+$font-1: "Roboto", sans-serif;
 
-$color-1: #FF6060;
-$color-2: #000000;
-$color-3: #FFFFFF;
-$color-4: #F6F6F6;
+$color-1: #FF0101;
+$color-2: #E60000;
+$color-3: #4AB8FF;
+$color-4: #FDCC0C;
+$color-5: #74798C;
+$color-6: #282D30;
+$color-7: #FFFFFF;
+$color-8: #9B9EAC;
+$color-9: #020203;
+$color-10: #FD5181;
+$color-11: #C4C4C4;
+$color-12: #FBFBFB;
 
 
 html {
   font-size: 10px;
   box-sizing: border-box;
+}
+body{
+  font-family: $font-1;
+  margin : 0px;
+  height:100vh;
+  width:100%;
 }
 
 *, *:before, *:after {
@@ -24,3 +38,7 @@ img{
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
