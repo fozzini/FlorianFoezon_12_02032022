@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts';
+import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer, Text } from 'recharts';
 import { savedUser } from '../../pages/Profil';
 import { dataContext } from '../../utils/services/ApiContext';
+import { PERFORMANCE_FORMATTER } from '../../utils/services/DataFormatter';
 
 const StatsRadar = () => {
 /**
@@ -12,13 +13,25 @@ const StatsRadar = () => {
 */
   const {PERFORMANCE} = useContext(dataContext);
   const currentUserPerformance = {PERFORMANCE}.PERFORMANCE[savedUser()];
-  currentUserPerformance.data.map((e,index)=> Object.assign(currentUserPerformance.data[index], {kind: currentUserPerformance.kind[index+1]}));
+  function renderPolarAngleAxis({ payload, x, y, cx, cy, ...rest }) {
+    return (
+      <Text
+        {...rest}
+        verticalAnchor="middle"
+        y={y + (y - cy) / 15}
+        x={x + (x - cx) / 7}
+      >
+        {payload.value}
+      </Text>
+    );
+  }
+  
   return (
     <div className='StatsRadar'>
     <ResponsiveContainer width='100%' >
-      <RadarChart outerRadius="47%" data={currentUserPerformance.data} >
+      <RadarChart outerRadius="80%" data={PERFORMANCE_FORMATTER(currentUserPerformance)} >
       <PolarGrid radialLines={false}/>
-        <PolarAngleAxis dataKey="kind" stroke="#ffffff" fill="#ffffff" tickLine={false} />
+        <PolarAngleAxis  textAnchor='middle' dataKey="kind" tick={props => renderPolarAngleAxis(props)} stroke="#ffffff" fill="#ffffff" tickLine={false} />
         <Radar dataKey="value" stroke="#FF0000" fill="#FF0000" fillOpacity={0.6} />
       </RadarChart>
     </ResponsiveContainer>

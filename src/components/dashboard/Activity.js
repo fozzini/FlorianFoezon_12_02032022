@@ -4,19 +4,17 @@ import Oval_red from '../../assets/Oval_red.svg';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { dataContext } from '../../utils/services/ApiContext';
 import { savedUser } from '../../pages/Profil';
+import { ACTIVITY_FORMATTER } from '../../utils/services/DataFormatter';
 
 const Activity = () => {
 /**
 * create Activity component
-* @param sessions.map set datas for recharts
 * @param {Activity} consume datas from context
 * @return html - Activity react component with recharts graphs
 */
   const {ACTIVITY} = useContext(dataContext);
-  const currentUserActivity = {ACTIVITY}.ACTIVITY[savedUser()];
-  const sessions = currentUserActivity.sessions;
-  sessions.map((e,index)=> Object.assign(sessions[index], {index: index +1}));
-
+  const userDataSession = {ACTIVITY}.ACTIVITY[savedUser()].sessions;
+  
   return (
     <div>
     <div className="activityHeader">
@@ -27,7 +25,7 @@ const Activity = () => {
       </div>
     </div>
     <ResponsiveContainer width='100%' height={200}>
-      <BarChart data={sessions} margin={{top: 5,right: -5,left:-30,bottom: -15}} >
+      <BarChart data={ACTIVITY_FORMATTER(userDataSession)} margin={{top: 5,right: -5,left:-30,bottom: -15}} >
         <CartesianGrid vertical={false} strokeDasharray="3 1" />
         <XAxis tickLine={false} dataKey="index"/>
         <YAxis yAxisId="right" orientation="right" axisLine={false} tickLine={false} domain={['dataMin - 1', 'dataMax + 1']} tickCount={4}/>

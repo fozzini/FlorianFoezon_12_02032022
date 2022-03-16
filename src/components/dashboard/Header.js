@@ -9,8 +9,7 @@ import { dataContext } from '../../utils/services/ApiContext.js'
 */
 const Header = () => {
   const {MAIN_DATA} = useContext(dataContext);
-  const currentUserMainData = {MAIN_DATA}.MAIN_DATA[savedUser()];
-  const userInfos = currentUserMainData.userInfos;
+  const userInfos = {MAIN_DATA}.MAIN_DATA[savedUser()].userInfos;
   return (
     <div>
       <div className='header'>
