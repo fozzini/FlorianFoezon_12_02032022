@@ -32,14 +32,26 @@
     transform: translate(-50%, -50%);
     color:$color-7; 
     .fetchApi{
+      display: flex;
+      justify-content: center;
       background-color: $color-9;
       color:$color-7;
-      margin:6vw;
-      border-radius: 25px;
+      
       h3{
         margin: 0;
-        padding:2vw;
-        font-size: 2vw;
+        padding:1vw;
+        font-size: 1vw;
+        border-style: none;
+      }
+      h2{
+        margin: 0;
+        padding:1vw;
+        font-size: 1vw;
+        color:black;
+        background-color: white;
+        border-style: none;
+        
+
       }
     }
   }

@@ -27,8 +27,7 @@ const Profil = () => {
 * @return html - profil page
 */
   const {MAIN_DATA} = useContext(dataContext);
-  const currentUserMainData = {MAIN_DATA}.MAIN_DATA[savedUser()];
-  const keydata = currentUserMainData.keyData ;
+  const keydata = {MAIN_DATA}.MAIN_DATA[savedUser()].keyData ;
   
   return (
     <div className='profilContainer'>
